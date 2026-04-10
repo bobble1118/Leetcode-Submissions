@@ -17,7 +17,8 @@ struct ListNode* removeElements(struct ListNode* head, int val) {
         if (curr->next->val == val) {
             curr->next = curr->next->next;                 
            
-        } else {
+        } 
+        else {
             curr = curr->next;
         }
     }
