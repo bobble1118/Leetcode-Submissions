@@ -15,16 +15,11 @@ struct ListNode* removeElements(struct ListNode* head, int val) {
 
     while (curr->next != NULL) {
         if (curr->next->val == val) {
-            struct ListNode* temp = curr->next; 
-            curr->next = curr->next->next;      
-            free(temp);                         
+            curr->next = curr->next->next;                 
            
         } else {
             curr = curr->next;
         }
     }
-    
-    struct ListNode* newHead = dummy->next;
-    free(dummy);
-    return newHead;
+    return dummy->next;
 }
