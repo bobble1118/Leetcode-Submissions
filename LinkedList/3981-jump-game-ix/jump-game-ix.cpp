@@ -19,11 +19,11 @@ public:
 
         ans[m-1] = premax[m-1];
         for (int i = m-2; i >= 0; i--){
-            if (premax[i] > surmin[i+1]){
-                ans[i] = ans[i+1];
+            if (premax[i] <= surmin[i+1]){
+                ans[i] = premax[i];
             }
             else{
-                ans[i] = premax[i];
+                ans[i] = ans[i+1];
             }
         }
 
