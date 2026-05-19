@@ -1,15 +1,21 @@
 class Solution {
 public:
     int getCommon(vector<int>& nums1, vector<int>& nums2) {
-        unordered_map<int, int> hash;
+        int i = 0, j = 0;
 
-        int MinRes = 2;
-        for (const auto& num: nums1){
-            hash[num] += 1;
-        }
-
-        for (const auto& num: nums2){
-            if (hash[num] > 0) return num;
+        while(i < nums1.size() && j < nums2.size()){
+            if(nums1[i] == nums2[j])
+            {
+                return nums1[i];
+            }
+            else if(nums1[i] < nums2[j])
+            {
+                i++;
+            }
+            else
+            {
+                j++;
+            }
         }
 
         return -1;
